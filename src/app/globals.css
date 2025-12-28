@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Background Colors */
+  --color-dark-bg: #282828;
+  --color-dark-card: #363636;
+  --color-dark-content: #3A3A3A;
+  
+  /* Text Colors */
+  --color-text-light: #E0D8C8;
+  --color-text-cream: #E0DED7;
+  --color-text-grey: #E0E0E0;
+  --color-text-dark: #1a1a1a;
+  
+  /* Accent Colors */
+  --color-terracotta: #8B5E4A;
+  --color-terracotta-dark: #6B4A3A;
+  --color-orange-brown: #A0522D;
+  --color-orange-section: #C06C4B;
+  --color-golden: #D4AF37;
+  
+  /* Fonts */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #282828;
+  color: #E0D8C8;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Selection Styling */
+::selection {
+  background: #8B5E4A;
+  color: white;
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 2px solid #8B5E4A;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Subtle hover effect for cards */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
