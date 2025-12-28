@@ -1,6 +1,24 @@
+"use client";
+
+import { useEffect } from "react";
 import Button from "@/components/ui/Button";
 
 export default function HeroSection() {
+  // #region agent log
+  useEffect(() => {
+    const imagePath = '/images/FrontImage.jpg';
+    
+    const img = new Image();
+    img.onload = () => {
+      fetch('http://127.0.0.1:7245/ingest/7f9b9f17-3ca4-4837-871e-9332034987b5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'HeroSection.tsx:9', message: 'Fixed path loaded successfully', data: { path: imagePath }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'post-fix', hypothesisId: 'VERIFY' }) }).catch(() => {});
+    };
+    img.onerror = () => {
+      fetch('http://127.0.0.1:7245/ingest/7f9b9f17-3ca4-4837-871e-9332034987b5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'HeroSection.tsx:13', message: 'Fixed path still failed', data: { path: imagePath }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'post-fix', hypothesisId: 'VERIFY' }) }).catch(() => {});
+    };
+    img.src = imagePath;
+  }, []);
+  // #endregion
+
   return (
     <section className="min-h-screen" style={{ backgroundColor: '#282828' }}>
       <div className="flex flex-col lg:flex-row min-h-screen">
@@ -37,8 +55,13 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button variant="primary">Tisch reservieren</Button>
-              <Button variant="secondary">Speisekarte ansehen</Button>
+              <Button 
+                variant="primary"
+                href="https://www.google.com/maps/reserve/v/dine/c/9Bur0wIrbm8?source=pa&opi=89978449&hl=de-CH&gei=GopRadazNNPoi-gP3cqJaA&sourceurl=https://www.google.com/search?client%3Dsafari%26rls%3Den%26q%3DSan%2BMarino%2BBonn%2Bgoogle%26ie%3DUTF-8%26oe%3DUTF-8"
+              >
+                Tisch reservieren
+              </Button>
+              <Button variant="secondary" href="/images/Speisekarte.pdf">Speisekarte ansehen</Button>
             </div>
           </div>
         </div>
@@ -48,7 +71,7 @@ export default function HeroSection() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')`,
+              backgroundImage: `url('/images/FrontImage.jpg')`,
             }}
           >
             {/* Gradient overlay for better text contrast */}

@@ -36,20 +36,32 @@ export default function AtmosphereSection() {
         </h2>
 
         {/* Intro Paragraph */}
-        <p 
-          className="text-lg md:text-xl leading-relaxed"
+        <div 
           style={{ 
-            fontFamily: 'var(--font-inter), system-ui, sans-serif',
-            color: '#010000',
             marginBottom: '80px',
             maxWidth: '900px'
           }}
         >
-          &#8222;Maharadscha&#8220; bedeutet König – und so fühlen sich unsere Gäste bei uns:
-          königlich umsorgt in einem stilvollen Ambiente mit indischem Flair. Warme
-          Farben, kunstvolle Dekorationen und sanfte Beleuchtung schaffen eine
-          Atmosphäre, die zum Verweilen einlädt.
-        </p>
+          <p 
+            className="text-lg md:text-xl leading-relaxed"
+            style={{ 
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
+              color: '#010000',
+              marginBottom: '24px'
+            }}
+          >
+            Unser Restaurant steht für authentische indische Küche in einem ruhigen, stilvollen Ambiente. Warme Farben, fein abgestimmte Lichtakzente und ausgewählte Details aus der indischen Kultur schaffen eine Atmosphäre der Gelassenheit und Eleganz.
+          </p>
+          <p 
+            className="text-lg md:text-xl leading-relaxed"
+            style={{ 
+              fontFamily: 'var(--font-inter), system-ui, sans-serif',
+              color: '#010000'
+            }}
+          >
+            Hier geht es nicht um Inszenierung, sondern um Echtheit: traditionelle Aromen, sorgfältige Zubereitung und ein Raum, der zum Ankommen, Entspannen und Genießen einlädt. Ein Ort, an dem sich indische Esskultur natürlich entfaltet – dezent, hochwertig und zeitlos.
+          </p>
+        </div>
 
         {/* Feature Blocks */}
         <div 

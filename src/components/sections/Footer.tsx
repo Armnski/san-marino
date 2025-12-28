@@ -124,6 +124,15 @@ export default function Footer() {
                 fontSize: '12px'
               }}
             >
+              Made by Armaan Ghotra
+            </p>
+            <p 
+              style={{ 
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                color: 'rgba(224, 224, 224, 0.4)',
+                fontSize: '12px'
+              }}
+            >
               Gehobene indische Küche in Bonn
             </p>
           </div>

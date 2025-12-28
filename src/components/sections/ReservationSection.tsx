@@ -128,8 +128,18 @@ export default function ReservationSection() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button variant="primary">Jetzt Tisch reservieren</Button>
-              <Button variant="secondary">Kontakt aufnehmen</Button>
+              <Button 
+                variant="primary"
+                href="https://www.google.com/maps/reserve/v/dine/c/9Bur0wIrbm8?source=pa&opi=89978449&hl=de-CH&gei=GopRadazNNPoi-gP3cqJaA&sourceurl=https://www.google.com/search?client%3Dsafari%26rls%3Den%26q%3DSan%2BMarino%2BBonn%2Bgoogle%26ie%3DUTF-8%26oe%3DUTF-8"
+              >
+                Jetzt Tisch reservieren
+              </Button>
+              <Button 
+                variant="secondary"
+                href="tel:0228441965"
+              >
+                Kontakt aufnehmen
+              </Button>
             </div>
           </div>
         </div>
@@ -139,7 +149,7 @@ export default function ReservationSection() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&q=80')`,
+              backgroundImage: `url('images/EndImage.png')`,
             }}
           >
             {/* Subtle overlay */}
