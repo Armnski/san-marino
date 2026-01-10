@@ -1,3 +1,7 @@
+"use client";
+
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
+
 // Simple SVG icons
 const RecipeIcon = () => (
   <svg
@@ -64,7 +68,7 @@ const features = [
     icon: <HeartIcon />,
     title: "Gesund & Ausgewogen",
     description:
-      "Vegane und ayurvedische Optionen für bewussten Genuss ohne Kompromisse beim Geschmack.",
+      "Vegane und vegetarische Optionen für bewussten Genuss ohne Kompromisse beim Geschmack.",
   },
 ];
 
@@ -75,22 +79,25 @@ export default function AuthenticitySection() {
     >
       <div style={{ marginLeft: '5%', marginRight: '5%', paddingLeft: '24px', paddingRight: '24px' }}>
         {/* Section Title */}
-        <h2 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center"
-          style={{ 
-            fontFamily: 'var(--font-playfair), Georgia, serif',
-            color: '#F3CFB5',
-            marginBottom: '80px'
-          }}
-        >
-          Authentizität und Qualität aus Überzeugung
-        </h2>
+        <FadeInOnScroll delay={0}>
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center"
+            style={{ 
+              fontFamily: 'var(--font-playfair), Georgia, serif',
+              color: '#F3CFB5',
+              marginBottom: '80px'
+            }}
+          >
+            Authentizität und Qualität aus Überzeugung
+          </h2>
+        </FadeInOnScroll>
 
         {/* Main Content Grid */}
-        <div 
-          className="grid grid-cols-1 lg:grid-cols-2"
-          style={{ gap: '64px', marginBottom: '100px' }}
-        >
+        <FadeInOnScroll delay={100}>
+          <div 
+            className="grid grid-cols-1 lg:grid-cols-2"
+            style={{ gap: '64px', marginBottom: '100px' }}
+          >
           {/* Image */}
           <div 
             className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -125,18 +132,20 @@ export default function AuthenticitySection() {
                 color: '#F3CFB5'
               }}
             >
-              Wir bieten auch vegane und ayurvedische Optionen, die Gesundheit und
+              Wir bieten auch vegane und vegetarische Optionen, die Gesundheit und
               Genuss vereinen. Jede Zutat wird sorgfältig ausgewählt, um höchste
               Qualität und Authentizität zu gewährleisten.
             </p>
           </div>
-        </div>
+          </div>
+        </FadeInOnScroll>
 
         {/* Feature Blocks */}
-        <div 
-          className="grid grid-cols-1 md:grid-cols-3"
-          style={{ gap: '40px' }}
-        >
+        <FadeInOnScroll delay={200}>
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: '40px' }}
+          >
           {features.map((feature, index) => (
             <div
               key={index}
@@ -174,7 +183,8 @@ export default function AuthenticitySection() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

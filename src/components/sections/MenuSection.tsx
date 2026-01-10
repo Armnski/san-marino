@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
 const menuItems = [
   {
@@ -12,7 +13,7 @@ const menuItems = [
   {
     title: "Tandoori-Gerichte",
     description:
-      "Saftig gegrilltes Huhn und Lamm, veredelt mit traditionellen Gewürzen aus dem Lehmofen. Die Marinade durchdringt das Fleisch und verleiht ihm sein unverwechselbares Aroma.",
+      "Saftig gegrilltes Huhn und Lamm, veredelt mit traditionellen Gewürzen. Die Marinade durchdringt das Fleisch und verleiht ihm sein unverwechselbares Aroma.",
     image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80",
   },
   {
@@ -22,10 +23,10 @@ const menuItems = [
     image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
   },
   {
-    title: "Süße Verführungen",
+    title: "Mango Lassi",
     description:
-      "Probieren Sie unser hausgemachtes Gulab Jamun oder cremiges Kheer als perfekten Abschluss eines königlichen Mahls.",
-    image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80",
+      "Genießen Sie unser hausgemachtes Mango Lassi – erfrischend, cremig und fein abgestimmt. Der ideale Begleiter oder Abschluss für ein ausgewogenes indisches Geschmackserlebnis.",
+    image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -73,32 +74,37 @@ export default function MenuSection() {
           }}
         >
           <div style={{ paddingLeft: '24px', paddingRight: '24px' }}>
-            <h2 
-              className="text-3xl sm:text-4xl md:text-5xl leading-tight"
-              style={{ 
-                fontFamily: 'var(--font-playfair), Georgia, serif',
-                color: '#F3CFB5',
-                marginBottom: '48px'
-              }}
-            >
-              Unsere Spezialitäten: Empfehlungen und Highlights
-            </h2>
+            <FadeInOnScroll delay={0}>
+              <h2 
+                className="text-3xl sm:text-4xl md:text-5xl leading-tight"
+                style={{ 
+                  fontFamily: 'var(--font-playfair), Georgia, serif',
+                  color: '#F3CFB5',
+                  marginBottom: '48px'
+                }}
+              >
+                Unsere Spezialitäten: Empfehlungen und Highlights
+              </h2>
+            </FadeInOnScroll>
 
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ 
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                color: '#F3CFB5',
-                marginBottom: '64px'
-              }}
-            >
-              Entdecken Sie die kulinarischen Schätze Indiens, sorgfältig
-              zusammengestellt von unseren erfahrenen Köchen. Jedes Gericht wird mit
-              Liebe zum Detail und authentischen Gewürzen zubereitet.
-            </p>
+            <FadeInOnScroll delay={100}>
+              <p 
+                className="text-lg leading-relaxed"
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: '#F3CFB5',
+                  marginBottom: '64px'
+                }}
+              >
+                Entdecken Sie die kulinarischen Schätze Indiens, sorgfältig
+                zusammengestellt von unseren erfahrenen Köchen. Jedes Gericht wird mit
+                Liebe zum Detail und authentischen Gewürzen zubereitet.
+              </p>
+            </FadeInOnScroll>
 
             {/* Carousel */}
-            <div style={{ position: 'relative' }}>
+            <FadeInOnScroll delay={200}>
+              <div style={{ position: 'relative' }}>
               {/* Cards Container */}
               <div 
                 style={{ 
@@ -295,7 +301,8 @@ export default function MenuSection() {
                   />
                 ))}
               </div>
-            </div>
+              </div>
+            </FadeInOnScroll>
           </div>
         </div>
 

@@ -1,13 +1,18 @@
+"use client";
+
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
+
 export default function Footer() {
   return (
     <footer 
       style={{ backgroundColor: '#3A3A3A', paddingTop: '100px', paddingBottom: '80px' }}
     >
       <div style={{ marginLeft: '5%', marginRight: '5%', paddingLeft: '24px', paddingRight: '24px' }}>
-        <div 
-          className="grid grid-cols-1 md:grid-cols-3"
-          style={{ gap: '64px', marginBottom: '80px' }}
-        >
+        <FadeInOnScroll delay={0}>
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: '64px', marginBottom: '80px' }}
+          >
           {/* Restaurant Name & Description */}
           <div>
             <h2 
@@ -25,11 +30,22 @@ export default function Footer() {
               style={{ 
                 fontFamily: 'var(--font-inter), system-ui, sans-serif',
                 color: 'rgba(224, 224, 224, 0.7)',
-                lineHeight: '1.8'
+                lineHeight: '1.8',
+                marginBottom: '16px'
               }}
             >
               Authentisches indisches Restaurant in Bonn. Erleben Sie die Vielfalt
               der indischen Küche in gehobenem Ambiente.
+            </p>
+            <p 
+              className="text-base leading-relaxed"
+              style={{ 
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                color: 'rgba(224, 224, 224, 0.7)',
+                lineHeight: '1.8'
+              }}
+            >
+              Inhaber: Familie Ghotra
             </p>
           </div>
 
@@ -98,16 +114,18 @@ export default function Footer() {
               </p>
             </div>
           </div>
-        </div>
+          </div>
+        </FadeInOnScroll>
 
         {/* Divider */}
-        <div 
-          style={{ 
-            borderTop: '1px solid rgba(212, 196, 168, 0.3)',
-            paddingTop: '20px'
-          }}
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center" style={{ gap: '12px' }}>
+        <FadeInOnScroll delay={100}>
+          <div 
+            style={{ 
+              borderTop: '1px solid rgba(212, 196, 168, 0.3)',
+              paddingTop: '20px'
+            }}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center" style={{ gap: '12px' }}>
             <p 
               style={{ 
                 fontFamily: 'var(--font-inter), system-ui, sans-serif',
@@ -126,17 +144,33 @@ export default function Footer() {
             >
               Made by Armaan Ghotra
             </p>
-            <p 
-              style={{ 
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                color: 'rgba(224, 224, 224, 0.4)',
-                fontSize: '12px'
-              }}
-            >
-              Gehobene indische Küche in Bonn
-            </p>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <p 
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: 'rgba(224, 224, 224, 0.4)',
+                  fontSize: '12px'
+                }}
+              >
+                Gehobene indische Küche in Bonn
+              </p>
+              <span style={{ color: 'rgba(224, 224, 224, 0.2)' }}>|</span>
+              <a
+                href="/impressum"
+                className="transition-colors hover:opacity-70"
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: 'rgba(224, 224, 224, 0.4)',
+                  fontSize: '12px',
+                  textDecoration: 'none'
+                }}
+              >
+                Impressum
+              </a>
+            </div>
+            </div>
           </div>
-        </div>
+        </FadeInOnScroll>
       </div>
     </footer>
   );

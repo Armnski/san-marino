@@ -1,4 +1,7 @@
+"use client";
+
 import Button from "@/components/ui/Button";
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
 const contentBlocks = [
   {
@@ -28,23 +31,26 @@ export default function ReservationSection() {
           }}
         >
           <div style={{ paddingLeft: '24px', paddingRight: '24px' }}>
-            <h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-              style={{ 
-                fontFamily: 'var(--font-playfair), Georgia, serif',
-                color: '#F3CFB5',
-                marginBottom: '64px',
-                maxWidth: '800px'
-              }}
-            >
-              Reservieren Sie jetzt und erleben Sie Indien mitten in Bonn!
-            </h2>
+            <FadeInOnScroll delay={0}>
+              <h2 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
+                style={{ 
+                  fontFamily: 'var(--font-playfair), Georgia, serif',
+                  color: '#F3CFB5',
+                  marginBottom: '64px',
+                  maxWidth: '800px'
+                }}
+              >
+                Reservieren Sie jetzt und erleben Sie Indien mitten in Bonn!
+              </h2>
+            </FadeInOnScroll>
 
             {/* Two Content Blocks Side by Side */}
-            <div 
-              className="grid grid-cols-1 md:grid-cols-2"
-              style={{ gap: '32px', marginBottom: '32px' }}
-            >
+            <FadeInOnScroll delay={100}>
+              <div 
+                className="grid grid-cols-1 md:grid-cols-2"
+                style={{ gap: '32px', marginBottom: '32px' }}
+              >
               {contentBlocks.map((block, index) => (
                 <div 
                   key={index} 
@@ -76,18 +82,20 @@ export default function ReservationSection() {
                   </p>
                 </div>
               ))}
-            </div>
+              </div>
+            </FadeInOnScroll>
 
             {/* Full Width Block */}
-            <div 
-              className="rounded-2xl card-hover"
-              style={{ 
-                backgroundColor: '#363636',
-                border: '1px solid rgba(58, 58, 58, 0.5)',
-                padding: '40px',
-                marginBottom: '48px'
-              }}
-            >
+            <FadeInOnScroll delay={150}>
+              <div 
+                className="rounded-2xl card-hover"
+                style={{ 
+                  backgroundColor: '#363636',
+                  border: '1px solid rgba(58, 58, 58, 0.5)',
+                  padding: '40px',
+                  marginBottom: '48px'
+                }}
+              >
               <h3 
                 className="text-xl md:text-2xl"
                 style={{ 
@@ -108,26 +116,30 @@ export default function ReservationSection() {
                 Folgen Sie uns auf Social Media für aktuelle Angebote, Events und
                 kulinarische Inspirationen aus Indien.
               </p>
-            </div>
+              </div>
+            </FadeInOnScroll>
 
             {/* Description */}
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ 
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                color: '#F3CFB5',
-                marginBottom: '48px',
-                maxWidth: '650px'
-              }}
-            >
-              Gönnen Sie sich eine Auszeit vom Alltag und tauchen Sie ein in die
-              faszinierende Welt der indischen Küche. Unser Team erwartet Sie mit
-              offenen Armen und verwöhnt Sie mit authentischen Spezialitäten, die Ihre
-              Sinne verzaubern werden.
-            </p>
+            <FadeInOnScroll delay={200}>
+              <p 
+                className="text-lg leading-relaxed"
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: '#F3CFB5',
+                  marginBottom: '48px',
+                  maxWidth: '650px'
+                }}
+              >
+                Gönnen Sie sich eine Auszeit vom Alltag und tauchen Sie ein in die
+                faszinierende Welt der indischen Küche. Unser Team erwartet Sie mit
+                offenen Armen und verwöhnt Sie mit authentischen Spezialitäten, die Ihre
+                Sinne verzaubern werden.
+              </p>
+            </FadeInOnScroll>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5">
+            <FadeInOnScroll delay={250}>
+              <div className="flex flex-col sm:flex-row gap-5">
               <Button 
                 variant="primary"
                 href="https://www.google.com/maps/reserve/v/dine/c/9Bur0wIrbm8?source=pa&opi=89978449&hl=de-CH&gei=GopRadazNNPoi-gP3cqJaA&sourceurl=https://www.google.com/search?client%3Dsafari%26rls%3Den%26q%3DSan%2BMarino%2BBonn%2Bgoogle%26ie%3DUTF-8%26oe%3DUTF-8"
@@ -140,7 +152,8 @@ export default function ReservationSection() {
               >
                 Kontakt aufnehmen
               </Button>
-            </div>
+              </div>
+            </FadeInOnScroll>
           </div>
         </div>
 
@@ -149,7 +162,7 @@ export default function ReservationSection() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('images/EndImage.png')`,
+              backgroundImage: `url('/images/EndImage.png')`,
             }}
           >
             {/* Subtle overlay */}

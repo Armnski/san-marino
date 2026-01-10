@@ -63,11 +63,13 @@ export default function Button({
   };
 
   if (href) {
+    // Internal links (starting with /) should not open in new tab
+    const isInternalLink = href.startsWith('/') || href.startsWith('#');
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isInternalLink ? undefined : "_blank"}
+        rel={isInternalLink ? undefined : "noopener noreferrer"}
         className={`hover:opacity-90 active:scale-[0.98] ${className}`}
         style={{ ...baseStyles, ...variantStyles[variant] }}
         onMouseEnter={handleMouseEnter}

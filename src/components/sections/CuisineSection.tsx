@@ -1,3 +1,7 @@
+"use client";
+
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
+
 // Simple SVG icons for the feature cards
 const GridIcon = () => (
   <svg
@@ -47,9 +51,9 @@ const LeafIcon = () => (
 const features = [
   {
     icon: <GridIcon />,
-    title: "Nord bis Süd",
+    title: "Indische Küche mit Herkunft",
     description:
-      "Kulinarische Reise durch ganz Indien – von cremigen Currys bis zu würzigen Masalas",
+      "Zubereitet von einem Koch aus Indien, der traditionelle Rezepte und regionale Kochkunst originalgetreu in unsere Küche bringt.",
   },
   {
     icon: <FlameIcon />,
@@ -72,59 +76,25 @@ export default function CuisineSection() {
     >
       <div style={{ marginLeft: '5%', marginRight: '5%', paddingLeft: '24px', paddingRight: '24px' }}>
         {/* Section Title */}
-        <h2 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-          style={{ 
-            fontFamily: 'var(--font-playfair), Georgia, serif',
-            color: '#010000',
-            marginBottom: '64px',
-            maxWidth: '900px'
-          }}
-        >
-          Die Magie der indischen Küche: Vielfalt und Geschmackserlebnis
-        </h2>
+        <FadeInOnScroll delay={0}>
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
+            style={{ 
+              fontFamily: 'var(--font-playfair), Georgia, serif',
+              color: '#010000',
+              marginBottom: '64px',
+              maxWidth: '900px'
+            }}
+          >
+            Die Magie der indischen Küche: Vielfalt und Geschmackserlebnis
+          </h2>
+        </FadeInOnScroll>
 
         {/* Content Grid */}
         <div 
           className="grid grid-cols-1 lg:grid-cols-2"
           style={{ gap: '64px', marginBottom: '80px' }}
         >
-          {/* Text Content */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <h3 
-              className="text-2xl md:text-3xl"
-              style={{ 
-                fontFamily: 'var(--font-playfair), Georgia, serif',
-                color: '#010000'
-              }}
-            >
-              Aromatische Vielfalt
-            </h3>
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ 
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                color: '#010000'
-              }}
-            >
-              Indische Küche verbindet aromatische Gewürze, vielfältige Currys und
-              traditionelle Zubereitungsarten wie Tandoori und Biryani. Jedes Gericht
-              erzählt seine eigene Geschichte und entführt Sie in die lebendigen
-              Straßen Mumbais oder die königlichen Paläste Rajasthans.
-            </p>
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ 
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                color: '#010000'
-              }}
-            >
-              Von mild bis &#8222;indisch scharf&#8220;: Unsere Gerichte sind individuell
-              anpassbar, damit jeder Gast seine perfekte Schärfe findet und ein
-              maßgeschneidertes Geschmackserlebnis genießt.
-            </p>
-          </div>
-
           {/* Spices Image */}
           <div 
             className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -137,17 +107,55 @@ export default function CuisineSection() {
               }}
             />
           </div>
+
+          {/* Text Content */}
+          <FadeInOnScroll delay={100}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <h3 
+                className="text-2xl md:text-3xl"
+                style={{ 
+                  fontFamily: 'var(--font-playfair), Georgia, serif',
+                  color: '#010000'
+                }}
+              >
+                Aromatische Vielfalt
+              </h3>
+              <p 
+                className="text-lg leading-relaxed"
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: '#010000'
+                }}
+              >
+                Indische Küche verbindet aromatische Gewürze, vielfältige Currys und
+                traditionelle Zubereitungsarten wie Tandoori und Biryani. Jedes Gericht
+                erzählt seine eigene Geschichte und entführt Sie in den Norden Indiens.
+              </p>
+              <p 
+                className="text-lg leading-relaxed"
+                style={{ 
+                  fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                  color: '#010000'
+                }}
+              >
+                Von mild bis &#8222;indisch scharf&#8220;: Unsere Gerichte sind individuell
+                anpassbar, damit jeder Gast seine perfekte Schärfe findet und ein
+                maßgeschneidertes Geschmackserlebnis genießt.
+              </p>
+            </div>
+          </FadeInOnScroll>
         </div>
 
         {/* Feature Cards */}
-        <div 
-          className="grid grid-cols-1 md:grid-cols-3"
-          style={{ gap: '32px' }}
-        >
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="rounded-2xl card-hover"
+        <FadeInOnScroll delay={200}>
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: '32px' }}
+          >
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="rounded-2xl card-hover"
               style={{ 
                 backgroundColor: '#363636',
                 border: '1px solid rgba(58, 58, 58, 0.5)',
@@ -187,7 +195,8 @@ export default function CuisineSection() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );

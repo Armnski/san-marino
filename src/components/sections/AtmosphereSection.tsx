@@ -1,3 +1,7 @@
+"use client";
+
+import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
+
 const features = [
   {
     title: "Herzlicher Service",
@@ -7,7 +11,7 @@ const features = [
   {
     title: "Stilvolles Ambiente",
     description:
-      "Gemütliche Innenräume mit authentischem indischen Design schaffen den perfekten Rahmen für besondere Momente.",
+      "Ruhige Innenräume mit warmem Licht schaffen eine entspannte Atmosphäre für besondere Momente.",
   },
   {
     title: "Einladende Terrasse",
@@ -23,25 +27,28 @@ export default function AtmosphereSection() {
     >
       <div style={{ marginLeft: '5%', marginRight: '5%', paddingLeft: '24px', paddingRight: '24px' }}>
         {/* Section Title */}
-        <h2 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-          style={{ 
-            fontFamily: 'var(--font-playfair), Georgia, serif',
-            color: '#010000',
-            marginBottom: '48px',
-            maxWidth: '900px'
-          }}
-        >
-          Unser Restaurant: Atmosphäre und Gastfreundschaft
-        </h2>
+        <FadeInOnScroll delay={0}>
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
+            style={{ 
+              fontFamily: 'var(--font-playfair), Georgia, serif',
+              color: '#010000',
+              marginBottom: '48px',
+              maxWidth: '900px'
+            }}
+          >
+            Unser Restaurant: Atmosphäre und Gastfreundschaft
+          </h2>
+        </FadeInOnScroll>
 
         {/* Intro Paragraph */}
-        <div 
-          style={{ 
-            marginBottom: '80px',
-            maxWidth: '900px'
-          }}
-        >
+        <FadeInOnScroll delay={100}>
+          <div 
+            style={{ 
+              marginBottom: '80px',
+              maxWidth: '900px'
+            }}
+          >
           <p 
             className="text-lg md:text-xl leading-relaxed"
             style={{ 
@@ -61,13 +68,15 @@ export default function AtmosphereSection() {
           >
             Hier geht es nicht um Inszenierung, sondern um Echtheit: traditionelle Aromen, sorgfältige Zubereitung und ein Raum, der zum Ankommen, Entspannen und Genießen einlädt. Ein Ort, an dem sich indische Esskultur natürlich entfaltet – dezent, hochwertig und zeitlos.
           </p>
-        </div>
+          </div>
+        </FadeInOnScroll>
 
         {/* Feature Blocks */}
-        <div 
-          className="grid grid-cols-1 md:grid-cols-3"
-          style={{ gap: '48px', marginBottom: '80px' }}
-        >
+        <FadeInOnScroll delay={200}>
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: '48px', marginBottom: '80px' }}
+          >
           {features.map((feature, index) => (
             <div key={index}>
               <h3 
@@ -91,29 +100,33 @@ export default function AtmosphereSection() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
+        </FadeInOnScroll>
 
         {/* Quote */}
-        <div 
-          style={{ 
-            borderLeft: '4px solid #010000',
-            paddingLeft: '40px',
-            paddingTop: '16px',
-            paddingBottom: '16px',
-            marginTop: '40px'
-          }}
-        >
-          <p 
-            className="text-xl md:text-2xl italic"
+        <FadeInOnScroll delay={300}>
+          <div 
             style={{ 
-              fontFamily: 'var(--font-inter), system-ui, sans-serif',
-              color: '#010000'
+              borderLeft: '4px solid #010000',
+              paddingLeft: '40px',
+              paddingTop: '24px',
+              paddingBottom: '24px',
+              marginTop: '40px'
             }}
           >
-            &#8222;Bei uns erleben Sie nicht nur ein Essen, sondern eine Reise nach Indien
-            – mit allen Sinnen.&#8220;
-          </p>
-        </div>
+            <p 
+              className="text-2xl md:text-3xl lg:text-4xl italic leading-relaxed"
+              style={{ 
+                fontFamily: 'var(--font-playfair), Georgia, serif',
+                color: '#010000',
+                fontWeight: 400
+              }}
+            >
+              &#8222;Bei uns erleben Sie nicht nur ein Essen, sondern eine Reise nach Indien
+              – mit allen Sinnen.&#8220;
+            </p>
+          </div>
+        </FadeInOnScroll>
       </div>
     </section>
   );
