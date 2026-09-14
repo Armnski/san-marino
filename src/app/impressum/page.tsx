@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata("Impressum | San Marino Bonn", "Kontakt und Anbieterangaben für das Restaurant San Marino, Königswinterer Straße 717, 53227 Bonn.", "/impressum");
 import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 import Button from "@/components/ui/Button";
 
