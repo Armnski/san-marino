@@ -1,36 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
+import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
-  title: "San Marino - Authentisches Indisches Restaurant in Bonn",
-  description: "Erleben Sie die faszinierende Welt der indischen Küche in einem stilvollen Ambiente. Königswinterer Straße 717, 53227 Bonn.",
+  ...pageMetadata("San Marino Bonn | Indisches Restaurant in Oberkassel", "San Marino in Bonn-Oberkassel: indische Küche, Terrasse, Catering, Feiern und Kegelbahn. Speisekarte ansehen und Tisch unter 0228 441965 reservieren.", "/"),
+  icons: { icon: "/restaurant/favicon.svg" },
+  ...(process.env.GOOGLE_SITE_VERIFICATION ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } } : {}),
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="de">
-      <body
-        className={`${playfair.variable} ${inter.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="de"><head><link rel="stylesheet" href="/restaurant/fonts.css" /></head><body>{children}</body></html>;
 }

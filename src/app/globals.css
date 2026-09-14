@@ -83,3 +83,5 @@ a, button {
   opacity: 1 !important;
   transform: translateY(0);
 }
+
+:root { --font-playfair: "Fraunces"; --font-inter: "DM Sans"; }

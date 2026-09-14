@@ -1,27 +1,7 @@
-import HeroSection from "@/components/sections/HeroSection";
-import CuisineSection from "@/components/sections/CuisineSection";
-import AtmosphereSection from "@/components/sections/AtmosphereSection";
-import MenuSection from "@/components/sections/MenuSection";
-import AuthenticitySection from "@/components/sections/AuthenticitySection";
-import ReservationSection from "@/components/sections/ReservationSection";
-import Footer from "@/components/sections/Footer";
-import Divider from "@/components/ui/Divider";
-
-export default function Home() {
-  return (
-    <main>
-      <HeroSection />
-      <Divider />
-      <CuisineSection />
-      <Divider />
-      <AtmosphereSection />
-      <Divider />
-      <MenuSection />
-      <Divider />
-      <AuthenticitySection />
-      <Divider />
-      <ReservationSection />
-      <Footer />
-    </main>
-  );
-}
+import { markup } from "@/content/home";
+import RestaurantDocument from "@/components/restaurant/RestaurantDocument";
+import { restaurantData, websiteData } from "@/lib/seo";
+export default function HomePage() { return <>
+  <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify([restaurantData, websiteData]).replace(/</g, "\\u003c")}} />
+  <RestaurantDocument markup={markup} />
+</>; }
